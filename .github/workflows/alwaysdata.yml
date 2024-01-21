@@ -1,8 +1,5 @@
-lname: Deploy release on alwaysdata environment
-on:
-  push:
-    tags:
-      - '*'
+name: Industrialisation continue sur le serveur Alwaysdata
+on: push
 jobs:
   deploy:
     runs-on: ubuntu-latest
