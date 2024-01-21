@@ -10,9 +10,9 @@ jobs:
       - name: Deploy Flask app
         uses: appleboy/ssh-action@master
         with:
-          host: ${{secrets.SSH_HOST}}
-          username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.SSH_PASSWORD }}
+          host: ssh-etudiant.alwaysdata.net
+          username: etudiant
+          password: EPSI2024
           script: |
             cd $HOME/www/flask
             git fetch --all
