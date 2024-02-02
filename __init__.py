@@ -10,6 +10,10 @@ app = Flask(__name__)
 def hello_world():
     return render_template('hello.html')
 
+@app.route("/fr/")
+def monfr():
+    return "<h2>Bonjour tout le monde !</h2>"
+
 @app.route('/paris/')
 def meteo():
     response = urlopen('https://api.openweathermap.org/data/2.5/forecast/daily?q=Paris,fr&cnt=16&appid=bd5e378503939ddaee76f12ad7a97608')
@@ -22,9 +26,9 @@ def meteo():
         results.append({'Jour': dt_value, 'temp': temp_day_value})
     return jsonify(results=results)
 
-@app.route("/fr/")
-def monfr():
-    return "<h2>Bonjour tout le monde !</h2>"
+@app.route("/rapport/")
+def mongraphique():
+    return render_template("graphique.html")
                                                                                                                                        
 if __name__ == "__main__":
   app.run(debug=True)
